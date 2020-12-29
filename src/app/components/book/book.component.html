@@ -20,7 +20,7 @@
                 <hr>
 
                 <p><strong>Precio Total:</strong> {{book.price}} €</p>
-                <p><strong>Precio sin I.V.A:</strong> {{book.priceTax}} €</p>
+                <p><strong>Precio sin I.V.A:</strong> {{(book.price-(book.price*book.tax))}} €</p>
                 <!-- No consigo mostrar el precio calculado, lo calculo en el book.component
                     En la consola con console log, los muestra bien.  -->
                 <button type="button" class="btn btn-outline-dark">Comprar</button>
