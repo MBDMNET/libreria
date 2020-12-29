@@ -10,12 +10,14 @@ import { BooksService,Books } from '../../services/books.service';
 })
 export class BooksComponent implements OnInit {
   books:Books[]=[];
+  excerpt:string;
   
   constructor(private _booksServices:BooksService,
               private router:Router) { }
 
   ngOnInit(): void {
     this.books=this._booksServices.getBooks();
+    
     
   }
 

@@ -3,6 +3,8 @@ import {HomeComponent} from './components/home/home.component';
 import {BooksComponent} from './components/books/books.component';
 import {AboutComponent} from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { BookComponent } from './components/book/book.component';
+
 
 
 const APP_ROUTES:Routes=[
@@ -10,6 +12,7 @@ const APP_ROUTES:Routes=[
     {path:'libros',component:BooksComponent},
     {path:'sobre-nosotros',component:AboutComponent},
     {path:'contacto',component:ContactComponent},
+    {path:'libro/:id',component:BookComponent},
     {path:'**',pathMatch:'full',redirectTo:'inicio'},
     
 

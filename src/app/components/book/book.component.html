@@ -1,0 +1,37 @@
+<h1 class="animated fadeIn fast">{{book.tittle}}<small> - {{book.author}}</small></h1>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img src="{{book.img}}" class="img-fluid" alt="">
+        <hr>
+        <!-- <button (click)="verHeroes()" type="button" class="btn btn-outline-danger btn-block">Ver Todos los Heroes</button> -->
+        <p><strong>ISBN: </strong>{{book.isbn}}</p>
+        <p><strong>Fecha de Publicacion: </strong>{{book.aparicion}}</p>
+        <p><strong>Generos: </strong><span *ngFor="let gen of book.genders;">{{gen}}, </span></p>
+    </div>
+    <div class="col-md-8">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h3>{{book.tittle}}</h3>
+                <p>{{book.author}}</p>
+
+                <hr>
+                <p>{{book.synopsis}}</p>
+                <hr>
+
+                <p><strong>Precio Total:</strong> {{book.price}} €</p>
+                <p><strong>Precio sin I.V.A:</strong> {{book.priceTax}} €</p>
+                <!-- No consigo mostrar el precio calculado, lo calculo en el book.component
+                    En la consola con console log, los muestra bien.  -->
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div>
