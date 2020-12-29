@@ -1,1 +1,21 @@
-<p>books works!</p>
+<h1>Todos nuestros <small>Libros</small></h1>
+<hr>
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor="let book of books; let i = index">
+        <img class="card-img-top" [src]="book.img" [alt]="book.tittle">
+        <div class="card-body">
+            <h4 class="card-title">{{book.tittle}}</h4>
+            <h5 class="card-title">{{book.author}}</h5>
+            <p class="card-text">ISBN: {{book.isbn}}</p>
+            <p class="card-text">{{book.synopsis}}</p>
+            <p class="card-text"><strong>Precio Total:</strong> {{book.price}} €</p>
+            <p class="card-text"><strong>Precio sin IVA:</strong> {{book.price} €</p>
+            <p class="card-text">Publicacion: <small class="text-muted">{{book.aparicion}}</small></p>
+            <!-- <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas</button> -->
+            <a [routerLink]="['/libro',i]" class="btn  btn-outline-primary btn-block">Ver Mas</a>
+        </div>
+    </div>
+
+
+</div>

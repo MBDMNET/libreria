@@ -1,0 +1,36 @@
+<div class="jumbotron">
+    <h1 class="display-4">Contacta Con nosotros</h1>
+    <p class="lead"><span>libreria para comprar online los libros mas famosos de la historia.</span> </p>
+    <a href="mailto:libreria@libreria.com"><i class="far fa-envelope"></i> Libreria@libreria.com</a><br>
+    <a href="tel:666666666"><i class="fas fa-phone-volume"></i> +34 666-666-666</a>
+    <hr class="my-4">
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre de Usuario</label>
+            <input type="nombreUsuario" class="form-control" id="exampleFormControlInput1" placeholder="Nombre de Usuario">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">¿Sobre que es su consulta?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+            <option>Compras</option>
+            <option>Usuario</option>
+            <option>Libros</option>
+            <option>Mas Informacion</option>           
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Enviar</button>
+    </form>
+    <br>
+    <p class="lead">
+        <a class="btn btn-success btn-lg" [routerLink]="['/inicio']" role="button">Inicio</a>
+    </p>
+</div>
