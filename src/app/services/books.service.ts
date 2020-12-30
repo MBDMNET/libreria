@@ -95,9 +95,11 @@ export class BooksService {
       let booksArr:Books[]=[];
       console.log('conole desde servicios: '+search);
       search = search.toLowerCase(); //pasamos lo que nos llega a minuscula
-      for(let book of this.books){
+      for(let i=0;i<this.books.length;i++){
+        let book = this.books[i];
         let tittle = book.tittle.toLowerCase();
         if(tittle.indexOf( search )>=0)        {
+          book.idx=i;
           booksArr.push(book);         
           
         }
@@ -121,5 +123,6 @@ export interface Books{
     aparicion: string,
     price:number,
     tax:number,
-    excerpt:string
+    excerpt:string,
+    idx?:number
 }

@@ -10,7 +10,7 @@
 <hr>
 <div class="card-columns">
 
-    <div class="card animated fadeIn fast" *ngFor="let book of booksSearch; let i = index">
+    <div class="card animated fadeIn fast" *ngFor="let book of booksSearch">
         <img class="card-img-top" [src]="book.img" [alt]="book.tittle">
         <div class="card-body">
             <h4 class="card-title">{{book.tittle}}</h4>
@@ -22,6 +22,6 @@
             <p class="card-text"><strong>Precio sin IVA:</strong> {{(book.price-(book.price*book.tax))}} €</p>
             <p class="card-text">Publicacion: <small class="text-muted">{{book.aparicion}}</small></p>
             <!-- <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas</button> -->
-            <a [routerLink]="['/libro',i]" class="btn  btn-outline-primary btn-block">Ver Mas</a>
+            <a [routerLink]="['/libro',book.idx]" class="btn  btn-outline-primary btn-block">Ver Mas</a>
         </div>
     </div>
