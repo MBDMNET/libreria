@@ -6,7 +6,7 @@
         <hr>
         <!-- <button (click)="verHeroes()" type="button" class="btn btn-outline-danger btn-block">Ver Todos los Heroes</button> -->
         <p><strong>ISBN: </strong>{{book.isbn}}</p>
-        <p><strong>Fecha de Publicacion: </strong>{{book.aparicion}}</p>
+        <p><strong>Fecha de Publicacion: </strong>{{book.aparicion | date:'dd MMMM yy':'':'es'}}</p>
         <p><strong>Generos: </strong><span *ngFor="let gen of book.genders;">{{gen}}, </span></p>
     </div>
     <div class="col-md-8">
@@ -19,8 +19,8 @@
                 <p>{{book.synopsis}}</p>
                 <hr>
 
-                <p><strong>Precio Total:</strong> {{book.price}} €</p>
-                <p><strong>Precio sin I.V.A:</strong> {{(book.price-(book.price*book.tax))}} €</p>
+                <p><strong>Precio Total:</strong> {{book.price | number:".0-2"}} €</p>
+                <p><strong>Precio sin I.V.A:</strong> {{(book.price-(book.price*book.tax))|number:".0-2"}} €</p>
                 <!-- No consigo mostrar el precio calculado, lo calculo en el book.component
                     En la consola con console log, los muestra bien.  -->
                 <button type="button" class="btn btn-outline-dark">Comprar</button>

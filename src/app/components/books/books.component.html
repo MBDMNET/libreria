@@ -10,9 +10,9 @@
             <p><strong>Generos: </strong><span *ngFor="let gen of book.genders;">{{gen}}, </span></p>
             <p class="card-text">ISBN: {{book.isbn}}</p>
             <p class="card-text">{{book.excerpt}} <a [routerLink]="['/libro',i]">leer mas</a></p>
-            <p class="card-text"><strong>Precio Total:</strong> {{book.price}} €</p>
-            <p class="card-text"><strong>Precio sin IVA:</strong> {{(book.price-(book.price*book.tax))}} €</p>
-            <p class="card-text">Publicacion: <small class="text-muted">{{book.aparicion}}</small></p>
+            <p class="card-text"><strong>Precio Total:</strong> {{book.price | number:".0-2"}} €</p>
+            <p class="card-text"><strong>Precio sin IVA:</strong> {{(book.price-(book.price*book.tax)) | number:".0-2"}} €</p>
+            <p class="card-text">Publicacion: <small class="text-muted">{{book.aparicion | date:'MMMM yyyy':'':'es'}}</small></p>
             <!-- <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas</button> -->
             <a [routerLink]="['/libro',i]" class="btn  btn-outline-primary btn-block">Ver Mas</a>
         </div>

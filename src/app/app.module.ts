@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID,NgModule } from '@angular/core';
 
 //Routes
 import {APP_ROUTING} from './app.routes'
@@ -17,6 +17,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BookComponent } from './components/book/book.component';
 import { SearchComponent } from './components/search/search.component';
+//Languages
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
@@ -35,7 +39,7 @@ import { SearchComponent } from './components/search/search.component';
     BrowserAnimationsModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
