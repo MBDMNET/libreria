@@ -1,0 +1,27 @@
+<h1>Busqueda de <small>Libros por:</small> "{{search}}" </h1>
+<p>Se han encontrado {{total}} de libros</p>
+<div class="row animated fadeIn fast" *ngIf="total==0">
+    <div class="col 12">
+        <div class="alert alert-info" role="alert">
+            No existe ningun libro con ese titulo: <strong>{{search}}</strong>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor="let book of booksSearch; let i = index">
+        <img class="card-img-top" [src]="book.img" [alt]="book.tittle">
+        <div class="card-body">
+            <h4 class="card-title">{{book.tittle}}</h4>
+            <h5 class="card-title">{{book.author}}</h5>
+            <p><strong>Generos: </strong><span *ngFor="let gen of book.genders;">{{gen}}, </span></p>
+            <p class="card-text">ISBN: {{book.isbn}}</p>
+            <p class="card-text">{{book.excerpt}} <a [routerLink]="['/libro',i]">leer mas</a></p>
+            <p class="card-text"><strong>Precio Total:</strong> {{book.price}} €</p>
+            <p class="card-text"><strong>Precio sin IVA:</strong> {{(book.price-(book.price*book.tax))}} €</p>
+            <p class="card-text">Publicacion: <small class="text-muted">{{book.aparicion}}</small></p>
+            <!-- <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas</button> -->
+            <a [routerLink]="['/libro',i]" class="btn  btn-outline-primary btn-block">Ver Mas</a>
+        </div>
+    </div>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { exit } from 'process';
 
 @Injectable({providedIn: 'root'})
 export class BooksService {
@@ -88,6 +89,22 @@ export class BooksService {
     getBook(idx:string)
     {
       return this.books[idx];
+    }
+
+    searchBook(search:string){
+      let booksArr:Books[]=[];
+      console.log('conole desde servicios: '+search);
+      search = search.toLowerCase(); //pasamos lo que nos llega a minuscula
+      for(let book of this.books){
+        let tittle = book.tittle.toLowerCase();
+        if(tittle.indexOf( search )>=0)        {
+          booksArr.push(book);         
+          
+        }
+       
+      }
+      console.log(booksArr);
+      return booksArr;
     }
     
   

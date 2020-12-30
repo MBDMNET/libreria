@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BookComponent } from './components/book/book.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BookComponent } from './components/book/book.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    BookComponent
+    BookComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

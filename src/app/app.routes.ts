@@ -4,6 +4,8 @@ import {BooksComponent} from './components/books/books.component';
 import {AboutComponent} from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BookComponent } from './components/book/book.component';
+import { SearchComponent } from './components/search/search.component';
+
 
 
 
@@ -13,6 +15,7 @@ const APP_ROUTES:Routes=[
     {path:'sobre-nosotros',component:AboutComponent},
     {path:'contacto',component:ContactComponent},
     {path:'libro/:id',component:BookComponent},
+    {path:'buscar/:search',component:SearchComponent},
     {path:'**',pathMatch:'full',redirectTo:'inicio'},
     
 
