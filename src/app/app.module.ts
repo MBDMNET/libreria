@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID,NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http'
 
 
 //Routes
@@ -44,7 +45,8 @@ registerLocaleData(localeEs);
     BrowserModule,
     BrowserAnimationsModule,
     APP_ROUTING,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent]

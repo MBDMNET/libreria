@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../../models/user.models';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegistryComponent implements OnInit {
   user:UserModel
-  constructor() { 
+  constructor(private auth:AuthService) { 
     
   }
 
@@ -21,8 +22,12 @@ export class RegistryComponent implements OnInit {
   onSubmit(form:NgForm)
    {
      if(form.invalid)     {return;}
-     console.log('Fomulario Enviado', this.user);
-      console.log(form);
+     this.auth.newUser(this.user).subscribe(res=>{
+        console.log(res);
+
+     },(err)=>{
+       console.log(err.error.error.message);
+     });
      
    }
 
