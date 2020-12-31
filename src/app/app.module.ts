@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID,NgModule } from '@angular/core';
 
+
 //Routes
 import {APP_ROUTING} from './app.routes'
 
@@ -20,6 +21,9 @@ import { SearchComponent } from './components/search/search.component';
 //Languages
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { RegistryComponent } from './components/registry/registry.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -32,12 +36,15 @@ registerLocaleData(localeEs);
     AboutComponent,
     ContactComponent,
     BookComponent,
-    SearchComponent
+    SearchComponent,
+    RegistryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent]
